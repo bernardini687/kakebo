@@ -4,7 +4,7 @@
   "description": "a kakebo in your command-line",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "test": ""
   },
   "author": "oscar bernardini",
   "license": "ISC",

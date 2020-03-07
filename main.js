@@ -1,5 +1,5 @@
-const { readerPromise } = require('./modules/storer')
+const dataCache = require('./lib/loader')
 
-readerPromise()
-  .then(console.log)
-  .catch(console.error)
+console.log(process.argv.slice(2))
+
+dataCache.then(data => console.log(data[0]))

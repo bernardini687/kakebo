@@ -1,0 +1,11 @@
+{
+  "name": "kakebo",
+  "version": "0.1.0",
+  "description": "a kakebo in your command-line",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "oscar bernardini",
+  "license": "ISC"
+}

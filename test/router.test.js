@@ -7,37 +7,6 @@ const router = require('../lib/router')
 const sinon = require('sinon')
 
 describe('read actions', async () => {
-  describe('monthly options', async () => {
-    beforeEach(async () => {
-      sinon.spy(router, 'readMonth')
-    })
-
-    afterEach(async () => {
-      sinon.restore()
-    })
-
-    it('calls `readMonth` with `true` when given `-m`', async () => {
-      router.dispatch(parseArgv(['-m']))
-      const readMonthSpy = router.readMonth.getCall(0)
-
-      assert.strictEqual(true, readMonthSpy.calledWithExactly(true))
-    })
-
-    it('calls `readMonth` with `1` when given `--month 1`', async () => {
-      router.dispatch(parseArgv(['--month', '1']))
-      const readMonthSpy = router.readMonth.getCall(0)
-
-      assert.strictEqual(true, readMonthSpy.calledWithExactly(1))
-    })
-
-    it('calls `readMonth` with `-1` when given `--meow=-1`', async () => {
-      router.dispatch(parseArgv(['--meow=-1']))
-      const readMonthSpy = router.readMonth.getCall(0)
-
-      assert.strictEqual(true, readMonthSpy.calledWithExactly(-1))
-    })
-  })
-
   describe('invalid options', async () => {
     beforeEach(async () => {
       sinon.stub(router, 'err').callsFake(() => null)
@@ -66,6 +35,112 @@ describe('read actions', async () => {
       const errSpy = router.err.getCall(0)
 
       assert.strictEqual(true, errSpy.calledWithExactly(man.readHelp))
+    })
+
+    it('shows help when option\'s flag is not allowed', async () => {
+      router.dispatch(parseArgv(['-x'])) // only d, w, m, y are ok!
+      const errSpy = router.err.getCall(0)
+
+      assert.strictEqual(true, errSpy.calledWithExactly(man.readHelp))
+    })
+  })
+  describe('daily options', async () => {
+    beforeEach(async () => {
+      sinon.spy(router, 'callRead')
+    })
+
+    afterEach(async () => {
+      sinon.restore()
+    })
+
+    it('calls `callRead` with `true` and `d` when given `-d`', async () => {
+      router.dispatch(parseArgv(['-d']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(true, 'd'))
+    })
+
+    it('calls `callRead` with `1` and `d` when given `--day 1`', async () => {
+      router.dispatch(parseArgv(['--day', '1']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(1, 'd'))
+    })
+  })
+  describe('weekly options', async () => {
+    beforeEach(async () => {
+      sinon.spy(router, 'callRead')
+    })
+
+    afterEach(async () => {
+      sinon.restore()
+    })
+
+    it('calls `callRead` with `true` and `w` when given `-w`', async () => {
+      router.dispatch(parseArgv(['-w']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(true, 'w'))
+    })
+
+    it('calls `callRead` with `1` and `w` when given `--week 1`', async () => {
+      router.dispatch(parseArgv(['--week', '1']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(1, 'w'))
+    })
+  })
+  describe('monthly options', async () => {
+    beforeEach(async () => {
+      sinon.spy(router, 'callRead')
+    })
+
+    afterEach(async () => {
+      sinon.restore()
+    })
+
+    it('calls `callRead` with `true` and `m` when given `-m`', async () => {
+      router.dispatch(parseArgv(['-m']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(true, 'm'))
+    })
+
+    it('calls `callRead` with `1` and `m` when given `--month 1`', async () => {
+      router.dispatch(parseArgv(['--month', '1']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(1, 'm'))
+    })
+
+    it('calls `callRead` with `-1` and `m` when given `--meow=-1`', async () => {
+      router.dispatch(parseArgv(['--meow=-1']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(-1, 'm'))
+    })
+  })
+  describe('yearly options', async () => {
+    beforeEach(async () => {
+      sinon.spy(router, 'callRead')
+    })
+
+    afterEach(async () => {
+      sinon.restore()
+    })
+
+    it('calls `callRead` with `true` and `y` when given `-y`', async () => {
+      router.dispatch(parseArgv(['-y']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(true, 'y'))
+    })
+
+    it('calls `callRead` with `1` and `y` when given `--year 1`', async () => {
+      router.dispatch(parseArgv(['--year', '1']))
+      const callReadSpy = router.callRead.getCall(0)
+
+      assert.strictEqual(true, callReadSpy.calledWithExactly(1, 'y'))
     })
   })
 })

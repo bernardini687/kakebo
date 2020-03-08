@@ -1,5 +1,14 @@
-const dataCache = require('./lib/loader')
+#!/usr/bin/env node
 
-console.log(process.argv.slice(2))
+const parseArgv = require('minimist')
+const router = require('./lib/router')
 
-dataCache.then(data => console.log(data[0]))
+const argv = process.argv.slice(2)
+
+console.log('[DEBUG] argv', argv)
+const parsed = parseArgv(argv)
+console.log('[DEBUG] parsed', parsed)
+
+router.dispatch(parsed)
+
+// require('./lib/loader').then(data => console.table(data))

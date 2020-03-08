@@ -2,13 +2,22 @@
   "name": "kakebo",
   "version": "0.1.0",
   "description": "a kakebo in your command-line",
+  "repository": "github:bernardini687/kakebo",
   "main": "main.js",
   "scripts": {
-    "test": ""
+    "test": "mocha --recursive 'test/**/*.test.js'"
+  },
+  "bin": {
+    "kakebo": "./main.js"
   },
   "author": "oscar bernardini",
   "license": "ISC",
   "devDependencies": {
+    "mocha": "^7.1.0",
+    "sinon": "^9.0.0",
     "standard": "^14.3.1"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
   }
 }

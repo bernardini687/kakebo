@@ -5,7 +5,7 @@
   "repository": "github:bernardini687/kakebo",
   "main": "main.js",
   "scripts": {
-    "test": "TEST=true mocha --recursive 'test/**/*.test.js'"
+    "test": "TEST=true mocha --recursive 'lib/**/*.test.js'"
   },
   "bin": {
     "kakebo": "./main.js"

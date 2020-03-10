@@ -7,12 +7,12 @@ const router = require('../lib/router')
 const sinon = require('sinon')
 
 describe('read actions', () => {
-  describe('invalid options', async () => {
-    beforeEach(async () => {
+  describe('invalid options', () => {
+    beforeEach(() => {
       sinon.stub(router, 'err').callsFake(() => null)
     })
 
-    afterEach(async () => {
+    afterEach(() => {
       sinon.restore()
     })
 
@@ -45,12 +45,12 @@ describe('read actions', () => {
     })
   })
 
-  describe('daily options', async () => {
-    beforeEach(async () => {
+  describe('daily options', () => {
+    beforeEach(() => {
       sinon.spy(router, 'callRead')
     })
 
-    afterEach(async () => {
+    afterEach(() => {
       sinon.restore()
     })
 
@@ -69,12 +69,12 @@ describe('read actions', () => {
     })
   })
 
-  describe('weekly options', async () => {
-    beforeEach(async () => {
+  describe('weekly options', () => {
+    beforeEach(() => {
       sinon.spy(router, 'callRead')
     })
 
-    afterEach(async () => {
+    afterEach(() => {
       sinon.restore()
     })
 
@@ -93,12 +93,12 @@ describe('read actions', () => {
     })
   })
 
-  describe('monthly options', async () => {
-    beforeEach(async () => {
+  describe('monthly options', () => {
+    beforeEach(() => {
       sinon.spy(router, 'callRead')
     })
 
-    afterEach(async () => {
+    afterEach(() => {
       sinon.restore()
     })
 
@@ -124,12 +124,12 @@ describe('read actions', () => {
     })
   })
 
-  describe('yearly options', async () => {
-    beforeEach(async () => {
+  describe('yearly options', () => {
+    beforeEach(() => {
       sinon.spy(router, 'callRead')
     })
 
-    afterEach(async () => {
+    afterEach(() => {
       sinon.restore()
     })
 

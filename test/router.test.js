@@ -6,7 +6,7 @@ const parseArgv = require('minimist')
 const router = require('../lib/router')
 const sinon = require('sinon')
 
-describe('read actions', async () => {
+describe('read actions', () => {
   describe('invalid options', async () => {
     beforeEach(async () => {
       sinon.stub(router, 'err').callsFake(() => null)

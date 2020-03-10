@@ -5,7 +5,7 @@
   "repository": "github:bernardini687/kakebo",
   "main": "main.js",
   "scripts": {
-    "test": "mocha --recursive 'test/**/*.test.js'"
+    "test": "TEST=true mocha --recursive 'test/**/*.test.js'"
   },
   "bin": {
     "kakebo": "./main.js"
@@ -18,6 +18,7 @@
     "standard": "^14.3.1"
   },
   "dependencies": {
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "moment": "^2.24.0"
   }
 }

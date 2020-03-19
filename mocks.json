@@ -1,4 +1,26 @@
 {
+  "periodics": [
+    {
+      "amount": 150000,
+      "interval": "M",
+      "tag": "income"
+    },
+    {
+      "amount": -20000,
+      "interval": "M",
+      "tag": "basic"
+    },
+    {
+      "amount": 4000,
+      "interval": "M",
+      "tag": "basic"
+    },
+    {
+      "amount": 6000,
+      "interval": "Y",
+      "tag": "optional"
+    }
+  ],
   "expenses": [
     {
       "date": "2018-01-07T03:30:00.000Z",

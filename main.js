@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+// const parsed = require('minimist')(process.argv.slice(2))
 const parseArgv = require('minimist')
 const router = require('./lib/router')
 

@@ -1,71 +1,71 @@
 {
   "periodics": [
     {
-      "amount": 150000,
+      "amount": 130000,
       "interval": "M",
       "tag": "income"
     },
     {
-      "amount": -20000,
+      "amount": -35000,
       "interval": "M",
       "tag": "basic"
     },
     {
-      "amount": 4000,
+      "amount": -7800,
       "interval": "M",
       "tag": "basic"
     },
     {
-      "amount": 6000,
+      "amount": -3200,
       "interval": "Y",
       "tag": "optional"
     }
   ],
   "expenses": [
     {
+      "amount": -100,
       "date": "2018-01-07T03:30:00.000Z",
-      "tag": "jan 2018",
-      "amount": -100
+      "tag": "jan 2018"
     },
     {
+      "amount": -200,
       "date": "2018-03-14T03:30:00.000Z",
-      "tag": "mar 2018",
-      "amount": -200
+      "tag": "mar 2018"
     },
     {
+      "amount": -300,
       "date": "2019-03-10T03:30:00.000Z",
-      "tag": "mar 2019",
-      "amount": -300
+      "tag": "mar 2019"
     },
     {
+      "amount": -400,
       "date": "2019-12-25T03:30:00.000Z",
-      "tag": "xmas ape",
-      "amount": -400
+      "tag": "xmas ape"
     },
     {
+      "amount": -500,
       "date": "2019-12-26T03:30:00.000Z",
-      "tag": "xmas coffee",
-      "amount": -500
+      "tag": "xmas coffee"
     },
     {
+      "amount": -600,
       "date": "2020-03-03T03:30:00.000Z",
-      "tag": "last week's tuesday",
-      "amount": -600
+      "tag": "last week's tuesday"
     },
     {
+      "amount": -700,
       "date": "2020-03-05T03:30:00.000Z",
-      "tag": "last week's thursday",
-      "amount": -700
+      "tag": "last week's thursday"
     },
     {
+      "amount": -800,
       "date": "2020-03-09T03:30:00.000Z",
-      "tag": "yesterday",
-      "amount": -800
+      "tag": "yesterday"
     },
     {
+      "amount": -900,
       "date": "2020-03-10T03:30:00.000Z",
-      "tag": "today",
-      "amount": -900
+      "tag": "today"
     }
   ]
 }

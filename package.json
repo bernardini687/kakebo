@@ -11,7 +11,7 @@
     "kakebo": "./main.js"
   },
   "author": "oscar bernardini",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "^7.1.1",
     "sinon": "^9.0.0",
@@ -20,6 +20,6 @@
   "dependencies": {
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
-    "shape-date": "^0.1.1"
+    "shape-date": "^0.2.0"
   }
 }
